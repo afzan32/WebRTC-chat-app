@@ -210,7 +210,18 @@ const socket = io({
   function displayMessage(data) {
     const messageDiv = document.createElement("div");
     messageDiv.classList.add("message");
-  
+
+     // System messages newly added
+  if (data.senderId === "system") {
+    messageDiv.classList.add("system-message"); // 👈 Add this
+    messageDiv.textContent = data.text;
+    chatbox.appendChild(messageDiv);
+    chatbox.scrollTop = chatbox.scrollHeight;
+    return;
+  }
+
+
+  // normal message
     if (data.senderId === socket.id) {
       messageDiv.classList.add("my-message");
     } else {
