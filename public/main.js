@@ -118,7 +118,7 @@ const socket = io({
   
       const videoContainer = document.createElement("div");
       videoContainer.id = `container-${userId}`;
-      videoContainer.className = "video-container";
+      videoContainer.className = "video-box";
   
       const remoteVideoElement = document.createElement("video");
       remoteVideoElement.id = `remote-${userId}`;
@@ -128,7 +128,7 @@ const socket = io({
       videoContainer.appendChild(remoteVideoElement);
   
       const usernameLabel = document.createElement("div");
-      usernameLabel.className = "username-label";
+      usernameLabel.className = "username-tag";
       usernameLabel.textContent = peerUsernames[userId] || "User";
       videoContainer.appendChild(usernameLabel);
   
@@ -271,6 +271,15 @@ const socket = io({
     users.forEach((user) => {
       peerUsernames[user.id] = user.username;
       createPeerConnection(user.id);
+      ////////////////
+      const container = document.getElementById(`container-${user.id}`);
+      if (container) {
+        const tag = document.createElement("span");
+        tag.className = "username-tag";
+        tag.textContent = user.username;
+        container.appendChild(tag);
+      }
+//////////////////////
     });
   });
   

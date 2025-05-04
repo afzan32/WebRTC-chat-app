@@ -12,15 +12,15 @@
 
         <!-- Room Join Section -->
         <header class="join-room-section" role="banner">
-            <h1 class="app-title">WebRTC Video Chat</h1>
+            <h1 class="app-title">TPR TINDER</h1> <br>
             <form id="joinForm" class="join-form">
-                <label for="room" class="form-label">Room ID</label>
+                <label for="room" class="form-label">Room ID :</label>
                 <input type="text" id="room" name="room" placeholder="Enter Room ID" class="room-input" required aria-label="Room ID">
 
-                <label for="username" class="form-label">Username</label>
+                <label for="username" class="form-label">User Name :</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" class="room-input" required aria-label="Username">
 
-                <button type="submit" class="btn primary" aria-label="Join Room">Join Room</button>
+                <button type="submit" class="btn-primary" aria-label="Join Room">Join Room</button>
             </form>
         </header>
 
@@ -29,15 +29,15 @@
             <section class="video-wrapper" id="videos" aria-label="Video Streams">
                 <div class="video-box">
                     <video id="localVideo" autoplay playsinline muted></video>
-                    <span class="username-tag" id="localUsername">You</span>
+                    <span class="username-tag" id="localUsername">Username</span>
                 </div>
             </section>
 
             <nav class="control-panel" id="controls" aria-label="Call Controls">
-                <button type="button" onclick="toggleMic()" id="micButton" class="btn control">🎤 Mute</button>
-                <button type="button" onclick="toggleCamera()" id="cameraButton" class="btn control">📷 Video</button>
-                <button type="button" onclick="toggleScreenShare()" id="screenShareButton" class="btn control">🖥 Share Screen</button>
-                <button type="button" onclick="endCall()" id="leaveButton" class="btn danger">🚪 Leave</button>
+                <button type="button" onclick="toggleMic()" id="micButton" class="control">Mute</button>
+                <button type="button" onclick="toggleCamera()" id="cameraButton" class="control">Video</button>
+                <button type="button" onclick="toggleScreenShare()" id="screenShareButton" class="control">Share Screen</button>
+                <button type="button" onclick="endCall()" id="leaveButton" class="danger">Leave</button>
             </nav>
         </main>
 
